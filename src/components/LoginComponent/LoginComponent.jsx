@@ -1,13 +1,57 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Grid, Container, Typography, Box, InputAdornment } from "@mui/material"
-import { MyTextField, LoginButton, MyGridContainer, ForgotButton } from "./Style"
+import { MyTextField, MyGridContainer, ForgotButton, MyLoadingButton } from "./Style"
 import loginImage from '../../assets/login.png'
 import { BiLockAlt, BiUser } from 'react-icons/bi'
+import { usersArray } from "../../data"
 
 const LoginComponent = () => {
+
+    const navigate = useNavigate();
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({
+        username: false,
+        password: false,
+    });
+    const [helperText, setHelperText] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const handleSubmit = () => {
+        setLoading(true)
+        setTimeout(() => {
+            if (username === '' && password === '') {
+                setErrors({ username: true, password: true, })
+            } else if (username === '') {
+                setErrors({ username: true })
+            } else if (password === '') {
+                setErrors({ password: true })
+            } else {
+                setErrors({ username: false, password: false, })
+                checkAccess()
+            }
+
+            setLoading(false)
+        }, 1500);
+    }
+
+    const checkAccess = () => {
+        usersArray.map(item => {
+            if (item.username === username && item.password === password) {
+                navigate('/dashboard')
+            } else {
+                setHelperText("Wrong username or password!")
+                setErrors({ username: true, password: true, })
+            }
+            return item
+        })
+    }
+
     return (
         <MyGridContainer container spacing={0}>
-            <Grid item sx={12} sm={6}>
+            <Grid item xs={12} md={6}>
                 <Container>
                     <Typography
                         variant="h6"
@@ -28,9 +72,9 @@ const LoginComponent = () => {
                         autoComplete="off"
                     >
                         <MyTextField
-                            id="outlined-username-input"
+                            error={errors.username}
+                            id="username"
                             label="Username"
-                            autoComplete="current-password"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -38,9 +82,13 @@ const LoginComponent = () => {
                                     </InputAdornment>
                                 ),
                             }}
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                            helperText={helperText}
                         />
                         <MyTextField
-                            id="outlined-password-input"
+                            error={errors.password}
+                            id="password"
                             label="Password"
                             type="password"
                             autoComplete="current-password"
@@ -51,13 +99,21 @@ const LoginComponent = () => {
                                     </InputAdornment>
                                 ),
                             }}
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            helperText={helperText}
                         />
-                        <LoginButton>Login</LoginButton>
+                        <MyLoadingButton
+                            loading={loading}
+                            onClick={() => handleSubmit()}
+                        >
+                            Login
+                        </MyLoadingButton>
                         <ForgotButton variant="text">Forgot password?</ForgotButton>
                     </Box>
                 </Container>
             </Grid>
-            <Grid item sx={12} sm={6}>
+            <Grid item xs={12} md={6}>
                 <Container>
                     <img src={loginImage} alt="login" />
                 </Container>

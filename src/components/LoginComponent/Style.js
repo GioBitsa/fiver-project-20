@@ -1,5 +1,6 @@
 import { styled } from '@mui/system'
 import { Grid, TextField, Button } from "@mui/material"
+import LoadingButton from '@mui/lab/LoadingButton';
 
 export const MyGridContainer = styled(Grid)({
     height: "calc(100vh - 64px)",
@@ -11,11 +12,11 @@ export const MyGridContainer = styled(Grid)({
         alignItems: "center",
     },
 
-    '&>div:first-child': {
+    '&>div:first-of-type': {
         backgroundColor: "#eaeffe",
     },
 
-    '&>div:last-child': {
+    '&>div:last-of-type': {
         backgroundColor: "#fcfcff",
     },
 
@@ -44,7 +45,7 @@ export const MyTextField = styled(TextField)({
     }
 })
 
-export const LoginButton = styled(Button)({
+export const MyLoadingButton = styled(LoadingButton)({
     width: "100%",
     maxWidth: "300px",
     padding: "10px 14px",
