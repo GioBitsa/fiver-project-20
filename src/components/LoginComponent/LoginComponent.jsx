@@ -19,7 +19,7 @@ const LoginComponent = () => {
                         component="form"
                         sx={{
                             '& .MuiTextField-root': { m: 1, width: '100%', maxWidth: '300px' },
-                            margin: "50px 0 150px 0",
+                            margin: "50px 0 50px 0",
                             display: "flex",
                             flexDirection: "column",
                             alignItems: "flex-end",
