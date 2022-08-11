@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <MyAppBar position="relative">
-      <Toolbar sx={{ justifyContent: "space-between" }}>
+      <Toolbar sx={{ justifyContent: "space-between", overflowX: "hidden" }}>
         <Box sx={{ zIndex: 1 }}>
           {localStorage.getItem("token") ? (
             <Stack spacing={1} direction="row" alignItems="center">
