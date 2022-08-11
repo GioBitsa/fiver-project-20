@@ -13,9 +13,9 @@ const MyButton = styled(Button)({
     }
 })
 
-const MainButton = ({ text }) => {
+const MainButton = ({ text, onClick }) => {
     return (
-        <MyButton>{text}</MyButton>
+        <MyButton onClick={onClick}>{text}</MyButton>
     )
 }
 
