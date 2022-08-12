@@ -5,7 +5,8 @@ import {
   ListItemIcon,
   MenuItem,
   ListItemText,
-  Grid,
+  Box,
+  Stack,
 } from "@mui/material";
 import { MyMenuList } from "./Style";
 import { AiOutlineHome, AiOutlineMenu } from "react-icons/ai";
@@ -24,9 +25,9 @@ const PageLayout = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Grid container spacing={2}>
-        <Grid item sx={{ width: "350px" }}>
-          <Paper elevation={0} sx={{ width: 350 }}>
+      <Stack direction="row" spacing={2}>
+        <Box sx={{ width: { xs: "300px", md: "350px" } }}>
+          <Paper elevation={0} sx={{ xs: { width: "300px" }, md: { width: "350px" } }}>
             <MyMenuList>
               <MenuItem
                 onClick={() => handleClick("/dashboard")}
@@ -78,11 +79,11 @@ const PageLayout = ({ children }) => {
               </MenuItem>
             </MyMenuList>
           </Paper>
-        </Grid>
-        <Grid item sx={{ width: "calc(100% - 350px)", marginTop: "40px" }}>
+        </Box>
+        <Box sx={{ width: { xs: "100%", md: "calc(100% - 350px)" }, padding: "24px 24px" }}>
           {children}
-        </Grid>
-      </Grid>
+        </Box>
+      </Stack>
     </>
   );
 };

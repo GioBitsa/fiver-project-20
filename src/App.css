@@ -17,3 +17,49 @@ code {
   padding: 0;
   box-sizing: border-box;
 }
+
+.verticalBars .recharts-surface {
+  transform: rotate(90deg) !important;
+  width: 260px;
+  height: 100%;
+}
+
+.myCircularProgressChart .MuiCircularProgress-svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.myBubblesChart {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.myVerticalChart {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.verticalBar {
+  width: initial;
+  height: 30px;
+  background-color: #a5a6f6;
+  font-size: 18px;
+  color: white;
+  padding: 0 10px;
+  text-transform: uppercase;
+  border-radius: 3px 0 0 3px;
+}
+
+.verticalBarMain {
+  width: initial;
+  height: 30px;
+  background-color: #e8e0fe;
+  margin: 10px 0;
+  border-radius: 3px;
+}

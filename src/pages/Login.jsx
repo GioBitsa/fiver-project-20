@@ -11,7 +11,7 @@ const Login = () => {
         if (localStorage.getItem('token') && localStorage.getItem('username')) {
             navigate('/dashboard')
         }
-    }, [])
+    }, [navigate])
 
 
     return (
