@@ -63,3 +63,48 @@ code {
   margin: 10px 0;
   border-radius: 3px;
 }
+
+.bg-layers {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-layers > .mainImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.bg-layers > .heroOverlay {
+  position: absolute;
+  bottom: -50px;
+  left: 10%;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bg-layers > .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(37, 51, 70);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.reviewserve-img {
+  display: block;
+  width:  330px;
+  height: 330px;
+  object-fit: cover;
+  margin: 0 auto;
+}
