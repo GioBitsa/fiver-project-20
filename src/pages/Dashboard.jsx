@@ -1,14 +1,16 @@
 import React from "react";
-import { Grid } from "@mui/material";
 import PageLayout from "../components/PageLayout/PageLayout";
-import RatingsComponent from "../components/RatingsComponent/RatingsComponent";
-import EngagementComponent from "../components/EngagementComponent/EngagementComponent";
-import ProgressChart from "../components/ProgressChart/ProgressChart";
-import BubbleChart from "../components/BubbleChart/BubbleChart";
+// import { Grid } from "@mui/material";
+// import RatingsComponent from "../components/RatingsComponent/RatingsComponent";
+// import EngagementComponent from "../components/EngagementComponent/EngagementComponent";
+// import ProgressChart from "../components/ProgressChart/ProgressChart";
+// import BubbleChart from "../components/BubbleChart/BubbleChart";
+import DashboardCharts from "../components/DashboardCharts/DashboardCharts";
 
 const Dashboard = () => {
-  return <PageLayout>
-    <Grid container spacing={5}>
+  return (
+    <PageLayout>
+      {/* <Grid container spacing={5}>
       <Grid item xs={12} md={6}>
         <RatingsComponent />
       </Grid>
@@ -21,8 +23,10 @@ const Dashboard = () => {
       <Grid item xs={12} md={6}>
         <ProgressChart />
       </Grid>
-    </Grid>
-  </PageLayout>;
+    </Grid> */}
+      <DashboardCharts />
+    </PageLayout>
+  );
 };
 
 export default Dashboard;
