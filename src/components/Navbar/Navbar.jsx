@@ -2,11 +2,12 @@ import React from "react";
 import { Box, Toolbar, Typography, Avatar, Stack } from "@mui/material";
 import { MyAppBar } from "./Style";
 import MainButton from "../Common/MainButton/MainButton";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import AvatarImg from "../../assets/avatar.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -38,7 +39,7 @@ const Navbar = () => {
           component="div"
           sx={{
             flexGrow: 1,
-            textAlign: "center",
+            textAlign: location.pathname === "/" ? "left" : "center",
             position: "absolute",
             width: "100%",
           }}
@@ -46,7 +47,21 @@ const Navbar = () => {
           Reviewserve
         </Typography>
         <Box sx={{ display: "block" }}>
-          {localStorage.getItem("token") ? (
+          {location.pathname === "/" ? (
+            <Stack direction="row" spacing={2}>
+              <MainButton text="home" onClick={() => navigate("/")} />
+              <MainButton
+                text="resources"
+                onClick={() => navigate("/resources")}
+              />
+              <MainButton text="blog" onClick={() => navigate("/blog")} />
+              <MainButton
+                text="book a demo"
+                onClick={() => navigate("/demo")}
+              />
+              <MainButton text="login" onClick={() => navigate("/login")} />
+            </Stack>
+          ) : localStorage.getItem("token") ? (
             <MainButton text="signout" onClick={() => handleLogout()} />
           ) : (
             <MainButton text="register" />
