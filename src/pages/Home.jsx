@@ -10,7 +10,6 @@ import {
   Divider,
 } from "@mui/material";
 import HeroImg from "../assets/hero.png";
-import HeroOverlay from "../assets/heroOverlay.png";
 import ReviewServe from "../assets/reviewserve.png";
 import SecondaryButton from "../components/Common/SecondaryButton/SecondaryButton";
 import ComputerSvg from "../assets/computerSvg.png";
@@ -85,7 +84,6 @@ const Home = () => {
             <SecondaryButton text="tell me how" />
           </Stack>
         </Container>
-        <img className="heroOverlay" src={HeroOverlay} alt="overlay" />
       </div>
       <Box sx={{ backgroundColor: "rgb(242, 242, 243)" }}>
         <Container maxWidth="lg">

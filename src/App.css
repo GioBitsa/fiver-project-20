@@ -84,14 +84,6 @@ code {
   z-index: 1;
 }
 
-.bg-layers > .heroOverlay {
-  position: absolute;
-  bottom: -50px;
-  left: 10%;
-  width: 80%;
-  margin: 0 auto;
-}
-
 .bg-layers > .overlay {
   width: 100%;
   height: 100%;
