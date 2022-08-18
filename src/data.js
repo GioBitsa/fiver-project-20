@@ -13,18 +13,22 @@ export const usersArray = [
       charts: [
         {
           id: 0,
+          title: "Ratings in different platforms",
           src: chartImage1,
         },
         {
           id: 1,
+          title: "Distribution of the ratings",
           src: chartImage2,
         },
         {
           id: 2,
+          title: "Distribution of positive to negative reviews",
           src: chartImage3,
         },
         {
           id: 3,
+          title: "Wordcloud of positive to negative reviews",
           src: chartImage4,
         },
       ],
@@ -39,18 +43,22 @@ export const usersArray = [
       charts: [
         {
           id: 0,
+          title: "Ratings in different platforms",
           src: chartImage1,
         },
         {
           id: 1,
+          title: "Distribution of the ratings",
           src: chartImage2,
         },
         {
           id: 2,
+          title: "Distribution of positive to negative reviews",
           src: chartImage3,
         },
         {
           id: 3,
+          title: "Wordcloud of positive to negative reviews",
           src: chartImage4,
         },
       ],
@@ -65,18 +73,22 @@ export const usersArray = [
       charts: [
         {
           id: 0,
+          title: "Ratings in different platforms",
           src: chartImage1,
         },
         {
           id: 1,
+          title: "Distribution of the ratings",
           src: chartImage2,
         },
         {
           id: 2,
+          title: "Distribution of positive to negative reviews",
           src: chartImage3,
         },
         {
           id: 3,
+          title: "Wordcloud of positive to negative reviews",
           src: chartImage4,
         },
       ],
