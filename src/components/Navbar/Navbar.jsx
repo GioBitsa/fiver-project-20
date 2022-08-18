@@ -39,7 +39,10 @@ const Navbar = () => {
           component="div"
           sx={{
             flexGrow: 1,
-            textAlign: location.pathname === "/" ? "left" : "center",
+            textAlign:
+              location.pathname === "/" || location.pathname === "/blog"
+                ? "left"
+                : "center",
             position: "absolute",
             width: "100%",
           }}
@@ -47,7 +50,7 @@ const Navbar = () => {
           Reviewserve
         </Typography>
         <Box sx={{ display: "block" }}>
-          {location.pathname === "/" ? (
+          {location.pathname === "/" || location.pathname === "/blog" ? (
             <Stack direction="row" spacing={2}>
               <MainButton text="home" onClick={() => navigate("/")} />
               <MainButton

@@ -1,25 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import Chart1 from "../../assets/chart1.jpg";
-import Chart2 from "../../assets/chart2.jpg";
-import Chart3 from "../../assets/chart3.jpg";
-import Chart4 from "../../assets/chart4.jpg";
+import { usersArray } from "../../data";
 
 const DashboardCharts = () => {
+  const [imagesContent, setImagesContent] = useState(null);
+
+  useEffect(() => {
+    usersArray?.map((item) => {
+      if (localStorage.getItem("username") === item.username) {
+        return setImagesContent(item);
+      }
+      return null;
+    });
+  }, []);
+
   return (
     <Grid container>
-      <Grid item xs={12} md={6}>
-        <img src={Chart1} alt="chart" width="100%" />
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <img src={Chart2} alt="chart" width="100%" />
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <img src={Chart3} alt="chart" width="100%" />
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <img src={Chart4} alt="chart" width="100%" />
-      </Grid>
+      {imagesContent !== null &&
+        imagesContent.content.charts?.map((item) => (
+          <Grid key={item.id} item xs={12}>
+            <img src={item.src} alt="chart" width="100%" />
+          </Grid>
+        ))}
     </Grid>
   );
 };
