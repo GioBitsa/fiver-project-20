@@ -237,7 +237,12 @@ const Home = () => {
           </Stack>
           <Divider />
 
-          <Stack direction="row" spacing={3} sx={{ padding: "50px 0px" }}>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            spacing={3}
+            sx={{ padding: "50px 0px" }}
+          >
             <Stack sx={{ width: "50%" }}>
               <Typography
                 variant="h4"
@@ -261,16 +266,15 @@ const Home = () => {
               </Typography>
             </Stack>
             <Box>
-              {/* <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/watch?v=4pMrmd5Fp0o&list=TLGG4xYttdXDdKwxNTA4MjAyMg&ab_channel=Reviewserve"
-                frameBorder="0"
+              <iframe
+                width="490"
+                height="275"
+                src="https://www.youtube.com/embed/4pMrmd5Fp0o?list=TLGG4xYttdXDdKwxODA4MjAyMg"
+                title="Reviewserve explainer video"
+                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-              ></iframe> */}
-              video here
+                allowfullscreen
+              ></iframe>
             </Box>
           </Stack>
         </Container>

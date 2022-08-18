@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar/Navbar";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, Divider } from "@mui/material";
 import RestaurantImg from "../assets/restaurant.png";
 
 const Blog = () => {
@@ -70,7 +70,8 @@ const Blog = () => {
             </Typography>
           </Box>
         </Box>
-        <Box sx={{ my: 5 }}>
+        <Divider sx={{ my: 5 }} />
+        <Box>
           <Typography component="h2" variant="h5">
             Lan Thai : Restaurant review
           </Typography>
@@ -111,6 +112,7 @@ const Blog = () => {
             </Typography>
           </Box>
         </Box>
+        <Divider sx={{ my: 5 }} />
         <Box>
           <Typography component="h2" variant="h5">
             Urban deccan pub indiranagar: Review
