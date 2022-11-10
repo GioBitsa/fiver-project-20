@@ -12,14 +12,16 @@ import { MyMenuList } from "./Style";
 import { AiOutlineHome, AiOutlineMenu } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { BiComment } from "react-icons/bi";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PageLayout = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [selected, setSelected] = useState(location.pathname);
 
   const handleClick = (value) => {
     setSelected(value);
+    navigate(value);
   };
 
   return (
@@ -27,7 +29,10 @@ const PageLayout = ({ children }) => {
       <Navbar />
       <Stack direction="row" spacing={2}>
         <Box sx={{ width: { xs: "300px", md: "350px" } }}>
-          <Paper elevation={0} sx={{ xs: { width: "300px" }, md: { width: "350px" } }}>
+          <Paper
+            elevation={0}
+            sx={{ xs: { width: "300px" }, md: { width: "350px" } }}
+          >
             <MyMenuList>
               <MenuItem
                 onClick={() => handleClick("/dashboard")}
@@ -80,7 +85,12 @@ const PageLayout = ({ children }) => {
             </MyMenuList>
           </Paper>
         </Box>
-        <Box sx={{ width: { xs: "100%", md: "calc(100% - 350px)" }, padding: "24px 24px" }}>
+        <Box
+          sx={{
+            width: { xs: "100%", md: "calc(100% - 350px)" },
+            padding: "24px 24px",
+          }}
+        >
           {children}
         </Box>
       </Stack>
